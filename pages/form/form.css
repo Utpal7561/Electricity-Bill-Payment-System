@@ -1,0 +1,109 @@
+/* body{
+    background-color: white;
+    
+} */
+
+
+
+@media screen and (width<= 988px) {
+#step{
+    display: none;
+}
+}
+#stepcss{
+    background-color:#104697;
+}
+#list-item-2{ 
+    background-color:rgb(255, 255, 255)
+    /* Genernal Application */
+}
+#list-item-3{
+    background-color:rgb(255, 255, 255)
+    /* Personal Details */
+}
+#class_10{
+    background-color:rgb(255, 255, 255)
+}
+#class_12{
+    background-color:rgb(255, 255, 255)
+}
+#graduation{
+    background-color:rgb(255, 255, 255);
+}
+#diploma{
+    background-color:rgb(255, 255, 255);
+}
+#Post_Graduation{
+    background-color:rgb(255, 255, 255);
+}
+#pgDiploma{
+    background-color:rgb(255, 255, 255);
+}
+#phd{
+    background-color:rgb(255, 255, 255);
+}
+#mphill{
+    background-color:rgb(255, 255, 255);
+}
+#bed{
+    background-color:rgb(255, 255, 255);
+}
+#med{
+    background-color:rgb(255, 255, 255);
+}
+#list-item-4{
+    background-color:rgb(255, 255, 255);
+    /* Employment Details */
+}
+#list-item-5{
+    background-color:rgb(255, 255, 255);
+    /* Professional Details */
+}
+#org1{
+    background-color:rgb(255, 255, 255);
+}
+#org2{
+    background-color:rgb(255, 255, 255);
+}
+#org3{
+    background-color:rgb(255, 255, 255);
+}
+#list-item-6{
+    background-color:rgb(255, 255, 255);
+    /* Professional Qualification */
+}
+#list-item-7{
+    background-color:rgb(255, 255, 255);
+    /* Other Links */
+}
+#list-item-8{
+    background-color:rgb(255, 255, 255);
+    /* Disclosure */
+}
+#list-item-9{
+    background-color:rgb(255, 255, 255);
+    /* Declaration */
+}
+#list-item-10{
+    background-color:rgb(255, 255, 255);
+    /* Submit Button  */
+}
+
+@media screen and (width<= 546px) {
+    #logo{
+        position: relative;
+        left: -13px;
+        height: 30px;
+        width: 240px;
+    }
+    
+    }
+
+@media screen and (width>= 546px) {
+    #logo{
+         position: relative;
+        height: 40px;
+        width: 300px;
+        left: -27px;
+    }
+}

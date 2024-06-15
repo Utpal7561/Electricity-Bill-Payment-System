@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./bill_gn.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+   
+    <!-- CHART -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <title>BILL HISTORY</title>
+</head>
+<body>
+    <div class="menu">
+        <ul>
+            <li class="profile">
+                <div class="img-box">
+                    <img src="../../Logo/mecl_logo.png" alt="image" style="background-color: aliceblue;">
+                </div>
+                <h2 id="user">Admin</h2>
+            </li>
+            <li>
+                <a href="../bill_gn/bill_gn.html" class="active">
+                    <i class="fas fa-home"></i>
+                    <p>Dashboard</p>
+                </a>
+            </li>
+            <li>
+                <a href="../bill_cr/bill_cr.html">
+                    <i class="fa-solid fa-money-bill"></i>
+                    <p>Generate Bill</p>
+                </a>
+            </li>
+
+            <li>
+                <a href="../../pages/login_module/split_Admin/sign-in.html">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <p>Log-out</p>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+
+
+    <div class="content">
+     <div class="title-info">
+        <p>DASHBOARD</p>
+     </div>
+
+     <div class="data-info">
+        <div class="box1">
+            <div class="data">
+                <p>Total paid and pending consumer </p>
+                <div id="graph">
+                    <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+                </div>
+             </div>
+        </div>
+
+        <div class="box1">
+            <div class="data">
+                <p>Time and Date</p>
+                <p id="date"></p>
+                <div id="graph">
+                    <canvas id="canvas" width="400" height="400"></canvas>
+                </div>
+                
+             </div>
+        </div>
+
+    </div>
+    <br/>
+<button class="btn btn-default" type="button" id="btnExport">Export</button>
+<iframe id="txtArea1" style="display:none"></iframe>
+
+<br/><br/>
+        <div id="table_wrapper">
+            <table class="table" id="table">
+                <thead>
+                    <tr>
+                        <th>Consumer no.</th>
+                        <th>Net amount</th>
+                        <th>Date & Time</th>
+                        <th>Due date</th>
+                        <th>Payment status</th>
+                        <th>Units</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  
+                    
+                </tbody>
+             </table>
+        </div>
+
+    
+</body>
+<script src="./bill_gn.js"></script>
+<script type="text/javascript">
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('btnExport').addEventListener('click', function(e) {
+        e.preventDefault();
+
+        // Getting data from our table
+        var data_type = 'data:application/vnd.ms-excel';
+        var table_div = document.getElementById('table_wrapper');
+        var table_html = table_div.outerHTML.replace(/ /g, '%20');
+
+        var a = document.createElement('a');
+        a.href = data_type + ', ' + table_html;
+        a.download = 'exported_table_' + Math.floor((Math.random() * 9999999) + 1000000) + '.xls';
+        a.click();
+    });
+});
+
+function fnExcelReport()
+{
+    var tab_text="<table border='2px'><tr bgcolor='#87AFC6'>";
+    var textRange; var j=0;
+    tab = document.getElementById('headerTable'); // id of table
+
+    for(j = 0 ; j < tab.rows.length ; j++) 
+    {     
+        tab_text=tab_text+tab.rows[j].innerHTML+"</tr>";
+        //tab_text=tab_text+"</tr>";
+    }
+
+    tab_text=tab_text+"</table>";
+    tab_text= tab_text.replace(/<A[^>]*>|<\/A>/g, "");   //remove if u want links in your table
+    tab_text= tab_text.replace(/<img[^>]*>/gi,"");       // remove if u want images in your table
+    tab_text= tab_text.replace(/<input[^>]*>|<\/input>/gi, ""); // reomves input params
+
+    var ua = window.navigator.userAgent;
+    var msie = ua.indexOf("MSIE "); 
+
+    if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))      // If Internet Explorer
+    {
+        txtArea1.document.open("txt/html","replace");
+        txtArea1.document.write(tab_text);
+        txtArea1.document.close();
+        txtArea1.focus(); 
+        sa=txtArea1.document.execCommand("SaveAs",true,"Say Thanks to Sumit.xls");
+    }  
+    else                 //other browser not tested on IE 11
+        sa = window.open('data:application/vnd.ms-excel,' + encodeURIComponent(tab_text));  
+
+    return (sa);
+}
+
+// TIME 
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+let radius = canvas.height / 2;
+ctx.translate(radius, radius);
+radius = radius * 0.90
+setInterval(drawClock, 1000);
+
+function drawClock() {
+  drawFace(ctx, radius);
+  drawNumbers(ctx, radius);
+  drawTime(ctx, radius);
+}
+
+function drawFace(ctx, radius) {
+  const grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
+  grad.addColorStop(0, '#333');
+  grad.addColorStop(0.5, 'white');
+  grad.addColorStop(1, '#333');
+  ctx.beginPath();
+  ctx.arc(0, 0, radius, 0, 2*Math.PI);
+  ctx.fillStyle = 'white';
+  ctx.fill();
+  ctx.strokeStyle = grad;
+  ctx.lineWidth = radius*0.1;
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
+  ctx.fillStyle = '#333';
+  ctx.fill();
+}
+
+function drawNumbers(ctx, radius) {
+  ctx.font = radius*0.15 + "px arial";
+  ctx.textBaseline="middle";
+  ctx.textAlign="center";
+  for(let num = 1; num < 13; num++){
+    let ang = num * Math.PI / 6;
+    ctx.rotate(ang);
+    ctx.translate(0, -radius*0.85);
+    ctx.rotate(-ang);
+    ctx.fillText(num.toString(), 0, 0);
+    ctx.rotate(ang);
+    ctx.translate(0, radius*0.85);
+    ctx.rotate(-ang);
+  }
+}
+
+function drawTime(ctx, radius){
+    const now = new Date();
+    let hour = now.getHours();
+    let minute = now.getMinutes();
+    let second = now.getSeconds();
+    //hour
+    hour=hour%12;
+    hour=(hour*Math.PI/6)+
+    (minute*Math.PI/(6*60))+
+    (second*Math.PI/(360*60));
+    drawHand(ctx, hour, radius*0.5, radius*0.07);
+    //minute
+    minute=(minute*Math.PI/30)+(second*Math.PI/(30*60));
+    drawHand(ctx, minute, radius*0.8, radius*0.07);
+    // second
+    second=(second*Math.PI/30);
+    drawHand(ctx, second, radius*0.9, radius*0.02);
+}
+
+function drawHand(ctx, pos, length, width) {
+    ctx.beginPath();
+    ctx.lineWidth = width;
+    ctx.lineCap = "round";
+    ctx.moveTo(0,0);
+    ctx.rotate(pos);
+    ctx.lineTo(0, -length);
+    ctx.stroke();
+    ctx.rotate(-pos);
+}
+
+let date=document.getElementById('date');
+const d = new Date();
+date.innerHTML=d;
+
+</script>
+</html>

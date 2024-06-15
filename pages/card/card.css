@@ -1,0 +1,374 @@
+*{
+    padding: 0;
+    margin: 0;
+    color: white;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background-color:#001;
+    display: flex;
+    font-family: 'Roboto';
+    margin: 0;
+
+}
+.profile{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.profile h2{
+    font-size: 20px;
+    text-transform: capitalize;
+}
+.img-box{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid white;
+    flex-shrink: 0;
+}
+.img-box img{
+    width: 100%;
+}
+
+.menu{
+    background-color: #123;
+    width: 80px;
+    height: 100vh;
+    padding: 20px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+.menu:hover{
+    width: 300px;
+}
+ul{
+    list-style: none;
+    position: relative;
+    height: 95%;
+}
+ul li a{
+    display: block;
+    text-decoration: none;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    transition: 0.5s;
+
+}
+ul li a:hover, .active , .box:hover, td:hover{
+    background-color: #ffffff55;
+}
+.log-out{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+}
+.log-out a{
+    background-color:#a00 ;
+}
+ul li a i{
+    font-size: 30px;
+}
+.content{
+    width: 100%;
+    margin: 10px;
+}
+.title-info{
+    background-color: #0481ff;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+.title-info p{
+    padding-left: 20px;
+    margin-top: 12px;
+}
+.data-info{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+
+}
+.box{
+    background-color: #123;
+    height: 200px;
+    flex-basis: 150px;
+    flex-grow: 1;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+.box1{
+    background-color: rgb(230, 161, 13);
+    height: 200px;
+    flex-basis: 150px;
+    flex-grow: 1;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+}
+.box:hover{
+    background-color: #123;
+}
+
+.box i{
+    font-size:40px
+}
+.box .data{
+    text-align: center;
+}
+
+.box .data span{
+    font-size: 30px;
+}
+table{
+    width: 100%;
+    text-align: center;
+    border-spacing: 8px;
+
+}
+th,td{
+    background-color: #123;
+    height: 40px;
+    /* border-radius: 8px; */
+}
+th{
+    background-color: #0481ff;
+}
+td:hover{
+    background-color: #123;
+}
+.price , .count{
+    padding: 6px;
+    border-radius: 6px;
+}
+.price{
+    background-color: green;
+}
+.count{
+    background-color: gold;
+    color: black;
+}
+#graph{
+    display: flex;
+    flex-direction: row;
+    justify-content:start;
+    height: 130px;
+    width: 100%;
+}
+
+
+
+/* Credit Card */
+.credit-card {
+    width: 360px;
+    height: 400px;
+    margin: 60px auto 0;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #fff;
+    /* box-shadow: 1px 2px 3px 0 rgba(0,0,0,.10); */
+    color: #001;
+}
+
+.form-header {
+    height: 60px;
+    padding: 20px 30px 0;
+    border-bottom: 1px solid #e1e8ee;
+    background-color: #0481FF;
+}
+ 
+.form-body {
+    height: 340px;
+    padding: 30px 30px 20px;
+    background-color: #0481FF;
+}
+#form_body{
+    height: 350px;
+    padding: 30px 30px 20px;
+    background-color: #0481FF;
+}
+/* Title */
+.title {
+    font-size: 18px;
+    margin: 0;
+    color: #ffffff;
+}
+
+/* Common */
+.card-number,
+.cvv-input input,
+.month select,
+.year select {
+    font-size: 14px;
+    font-weight: 100;
+    line-height: 14px;
+    color: #1c6eb6;
+}
+ 
+.card-number,
+.month select,
+.year select {
+    font-size: 14px;
+    font-weight: 100;
+    line-height: 14px;
+}
+ 
+.card-number,
+.cvv-details,
+.cvv-input input,
+.month select,
+.year select {
+    opacity: .7;
+    color: #86939e;
+}
+
+/* Card Number */
+.card-number {
+    width: 100%;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    border: 2px solid #e1e8ee;
+    border-radius: 6px;
+    height: 40px;
+}
+
+/* Date Field */
+.month select,
+.year select {
+    
+    height: 40px;
+    width: 145px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    border: 2px solid #e1e8ee;
+    border-radius: 6px;
+    /* background: url('caret.png') no-repeat; */
+    background-position: 85% 50%;
+    /* -moz-appearance: none; */
+    /* -webkit-appearance: none; */
+    color: rgb(255, 255, 255);
+}
+ 
+.month select {
+    float: left;
+    background-color: #09365e;
+}
+ 
+.year select {
+    float: right;
+    background-color: #09365e;
+}
+
+/* Card Verification Field */
+.cvv-input input {
+    height: 40px;
+    float: left;
+    width: 145px;
+    padding-left: 20px;
+    border: 2px solid #e1e8ee;
+    border-radius: 6px;
+    background: #fff;
+    /* background-color: #ffffff; */
+    color: rgb(3, 3, 3);
+}
+ 
+.cvv-details {
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 16px;
+    float: left;
+    color: #fff;
+    margin-bottom: 10px;
+}
+ 
+.cvv-details p {
+    margin-top: 10px;
+}
+
+.amount input{
+    height: 40px;
+    float: left;
+    width: 145px;
+    padding-left: 10px;
+    border: 2px solid #e1e8ee;
+    border-radius: 6px;
+    background: #fff;
+    margin-left: 6px;
+    color: #cac9c9;
+}
+.OTP{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: black;
+}
+.OTP input{
+    display: none;
+    height: 40px;
+    float: left;
+    width: 145px;
+    padding-left: 10px;
+    border: 2px solid #e1e8ee;
+    border-radius: 6px;
+    background: #fff;
+    margin-left: 6px;
+    color: #3f3e3e;
+}
+
+
+/* Buttons Section */
+/* .paypal-btn, */
+.proceed-btn {
+    cursor: pointer;
+    font-size: 16px;
+    height: 40px;
+    width: 100%;
+    border-color: transparent;
+    border-radius: 6px;
+}
+ 
+.proceed-btn {
+    margin-bottom: 10px;
+    background: #7dc855;
+}
+ 
+/* .paypal-btn a, */
+.proceed-btn a {
+    text-decoration: none;
+}
+ 
+.proceed-btn a {
+    color: #fff;
+}
+ 
+/* .paypal-btn a {
+    color: rgba(242, 242, 242, .7);
+}
+ 
+.paypal-btn {
+    padding-right: 95px;
+    background: url('paypal-logo.svg') no-repeat 65% 56% #009cde;
+} */
+
+#OTP_BUTTON{
+    display: none;
+    margin-top: 10px;
+}

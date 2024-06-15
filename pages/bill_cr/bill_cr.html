@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./bill_cr.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    <title>MECL Dashboard</title>
+</head>
+<body>
+    <div class="menu">
+        <ul>
+            <li class="profile">
+                <div class="img-box">
+                    <img src="../../Logo/mecl_logo.png" alt="image" style="background-color: aliceblue;">
+                </div>
+                <h2 id="user">user</h2>
+            </li>
+            <li>
+                <a href="../bill_gn/bill_gn.html" class="active">
+                    <i class="fas fa-home"></i>
+                    <p>dashboard</p>
+                </a>
+            </li>
+            <li>
+                <a href="../bill_cr/bill_cr.html">
+                    <i class="fa-solid fa-money-bill"></i>
+                    <p>Generate history</p>
+                </a>
+            </li>
+
+            <li>
+                <a href="../../pages/login_module/split_Admin/sign-in.html">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <p>Log-out</p>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+
+
+    <div class="content">
+     <div class="title-info">
+        <p>MECL BILL GENERATE PANEL</p>
+     </div>
+     <div class="data-info">
+        <div class="box">
+            <i class="fa fa-id-card"></i>
+            <div class="data">
+                <p>Total Bill Generated</p>
+                <span id="total_bill_generated">100</span>
+            </div>
+        </div>
+        <div class="box">
+            <i class="fa fa-list-alt"></i>
+            <div class="data">
+                <p>Bill Generated Today</p>
+                <span id="generate_today">101</span>
+            </div>
+        </div>
+
+    <!--FORM START  -->
+     </div>
+     <div class="title-info">
+        <i class="fa-solid fa-list"></i>
+        <p id="form"> FILL THE FORM </p>
+     </div>
+
+     <div class="form_1" id="form_1"> 
+        <form>
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Consumer number</label>
+              <input type="number" name="consumer_id" class="form-control" id="consumer_number" placeholder="" value="">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Current reading</label>
+                <input type="number" class="form-control" id="current_reading" placeholder="" value="">
+                <p id="error"></p>
+            </div>
+            <button type="button" class="btn btn-outline-light" id="next">Process Next <i class="fa-solid fa-arrow-right"></i></button>
+          </form>
+     </div>
+     <br/>
+     <div class="form_2" id="form_2"> 
+        <form>
+              <div class="form-group">
+                <label for="exampleFormControlInput1">Previous reading</label>
+                <input type="number" class="form-control" id="prev_reading" placeholder="">
+              </div>
+              <div class="form-group">
+              <label for="exampleFormControlInput1">Energy Charge</label>
+              <input type="number" class="form-control" id="energy_charge" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Fixed Charge</label>
+                <input type="number" class="form-control" id="fix_charge" placeholder="80" value="80" disabled>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Electricity Charge</label>
+                <input type="number" class="form-control" id="elect_charge" placeholder="1.5" value="1.5" disabled>
+              </div>
+              <button type="button" class="btn btn-outline-light" id="generate">Generate <i class="fa-solid fa-arrow-right"></i></button>
+          </form>
+     </div>
+
+    </div>
+
+    
+</body>
+<script src="./bill_cr.js"></script>
+</html>

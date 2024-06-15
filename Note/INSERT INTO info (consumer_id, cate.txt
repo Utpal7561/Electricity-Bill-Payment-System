@@ -1,0 +1,3 @@
+INSERT INTO info (consumer_id, category, address, house_no, meter_no, loadKW, units)VALUES(145286, 'Domestic', '10th Mile GS Road', 356, 4567, 2, 76);
+
+INSERT INTO bill_no (consumer_id,current_reading,previous_reading,date,time,units,energy_charge,fixed_price,electricity_duty,total_bill) VALUES(123,60,30,

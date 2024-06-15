@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="card.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100' rel='stylesheet' type='text/css'>
+    <title>MECL Dashboard</title>
+</head>
+<body>
+    <div class="menu">
+        <ul>
+            <li class="profile">
+                <div class="img-box">
+                    <img src="../../Logo/mecl_logo.png" alt="image" style="background-color: aliceblue;">
+                </div>
+                <h2 id="user">user</h2>
+            </li>
+            <li>
+                <a href="../dashboard/dashboard.html" class="active">
+                    <i class="fas fa-home"></i>
+                    <p>dashboard</p>
+                </a>
+            </li>
+            <li>
+                <a href="./pay_history.html">
+                    <i class="fa-solid fa-money-bill"></i>
+                    <p>Payment history</p>
+                </a>
+            </li>
+           
+        </ul>
+
+    </div>
+
+
+    <div class="content">
+    
+     <div class="title-info">
+        <i class="fa-solid fa-money-bill"></i>
+        <p> Billing  Process</p>
+     </div>
+     
+<!-- CARD -->
+<form class="credit-card">
+    <div class="form-header">
+      <h5 class="title" id="consumer_id">Consumer No.: </h5>
+    </div>
+   
+    <div class="form-body" id="form_body">
+      <!-- Card Number -->
+      <input type="text" class="card-number" id="card_number" placeholder="Card Number">
+   
+      <!-- Date Field -->
+      <div class="date-field">
+        <div class="month">
+          <select name="Month">
+            <option value="january">January</option>
+            <option value="february">February</option>
+            <option value="march">March</option>
+            <option value="april">April</option>
+            <option value="may">May</option>
+            <option value="june">June</option>
+            <option value="july">July</option>
+            <option value="august">August</option>
+            <option value="september">September</option>
+            <option value="october">October</option>
+            <option value="november">November</option>
+            <option value="december">December</option>
+          </select>
+        </div>
+        <div class="year">
+          <select name="Year">
+            <option value="2016">2016</option>
+            <option value="2017">2017</option>
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+          </select>
+        </div>
+      </div>
+   
+      <!-- Card Verification Field -->
+      <div class="card-verification">
+        <div class="cvv-input">
+          <input type="text" id="cvv" placeholder="CVV">
+        </div>
+        <div class="amount">
+            <input type="number" placeholder="Amount" id="bill_amount">
+          </div>
+        <div class="cvv-details">
+          <p>3 or 4 digits usually found <br> on the signature strip</p>
+        </div>
+      </div>
+   
+      <!-- Buttons -->
+      <button type="button" class="proceed-btn" id="Proceed">Proceed</button>
+      <div class="OTP">
+        <input type="number" placeholder="OTP" id="OTP_INPUT">
+      </div>
+      <button type="button" class="proceed-btn" id="OTP_BUTTON"><a href="#">Proceed</a></button>
+    </div>
+  </form>
+    
+</body>
+<script src="card.js"></script>
+</html>

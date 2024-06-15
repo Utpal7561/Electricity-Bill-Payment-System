@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    <title>MECL Dashboard</title>
+</head>
+<body>
+    <div class="menu">
+        <ul>
+            <li class="profile">
+                <div class="img-box">
+                    <img src="../../Logo/mecl_logo.png" alt="image" style="background-color: aliceblue;">
+                </div>
+                <h2 id="user">user</h2>
+            </li>
+            <li>
+                <a href="./dashboard.html" class="active">
+                    <i class="fas fa-home"></i>
+                    <p>dashboard</p>
+                </a>
+            </li>
+            <li>
+                <a href="../pay_history/pay_history.html">
+                    <i class="fa-solid fa-money-bill"></i>
+                    <p>payment history</p>
+                </a>
+            </li>
+
+            <li>
+                <a href="../../pages/login_module/split_Users/sign-in.html">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <p>Log-out</p>
+                </a>
+            </li>
+           
+        </ul>
+
+    </div>
+
+
+    <div class="content">
+     <div class="title-info">
+        <p>MECL <span id="user_name">&nbsp; </span></p>
+       
+     </div>
+     <div class="data-info">
+        <div class="box">
+            <i class="fa fa-id-card"></i>
+            <div class="data">
+                <p>Consumer No.</p>
+                <span id="consumer_id">100</span>
+            </div>
+        </div>
+        <div class="box">
+            <i class="fa fa-list-alt"></i>
+            <div class="data">
+                <p>Category</p>
+                <span id="category">101</span>
+            </div>
+        </div>
+        <div class="box">
+            <i class="fa fa-fax"></i>
+            <div class="data">
+                <p>Meter No.</p>
+                <span id="meter_no">102</span>
+            </div>
+        </div>
+        <div class="box">
+            <i class="fa fa-bolt"></i>
+            <div class="data">
+                <p>Load (k/w)</p>
+                <span id="loadKW">$100</span>
+            </div>
+        </div>
+        
+     </div>
+     <div class="title-info">
+        <i class="fa-solid fa-envelope"></i>
+        <p id="email"></p>
+     </div>
+     <table id="table">
+        <thead>
+            <tr>
+                <th>Bill Date</th>
+                <th>Net Bill Amount</th>
+                <th>Status</th>
+                <th>Payment</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- <tr>
+                <td>tv</td>
+                <td><span class="price">$100</span></td>
+                <td><span class="count">30</span></td>
+                <td><button id="button">Pay</button></td>
+            </tr> -->
+            
+        </tbody>
+     </table>
+
+    </div>
+
+    
+</body>
+<script src="dashboard.js"></script>
+</html>

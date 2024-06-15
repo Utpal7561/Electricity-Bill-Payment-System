@@ -21,4 +21,19 @@ effective for consumers as well as for the department of electricity.
   • OTP(PHP Mailer)
 
 # screenshot
-Home Page : (`https://github.com/Utpal7561/Electricity-Bill-Payment-System/blob/main/Screenshot/MECL%201.png`)
+- Home Page
+![login](https://github.com/Utpal7561/Electricity-Bill-Payment-System/blob/main/Screenshot/MECL%201.png)
+- User Dashboard
+![login](https://github.com/Utpal7561/Electricity-Bill-Payment-System/blob/main/Screenshot/MECL%202.png)
+- Admin Dashboard
+![login](https://github.com/Utpal7561/Electricity-Bill-Payment-System/blob/main/Screenshot/MECL%20ADMIN%201.png)
+- Admin Login
+![login](https://github.com/Utpal7561/Electricity-Bill-Payment-System/blob/main/Screenshot/MECL%20ADMIN%20LOGIN.png)
+- Admin Register
+![login](https://github.com/Utpal7561/Electricity-Bill-Payment-System/blob/main/Screenshot/MECL%20ADMIN%20REGISTER%20.png)
+- Admin Bill Generate Page
+![login](https://github.com/Utpal7561/Electricity-Bill-Payment-System/blob/main/Screenshot/MECL%20ADMIN.png)
+- User Payment History
+![login](https://github.com/Utpal7561/Electricity-Bill-Payment-System/blob/main/Screenshot/MECL%20PAYMENT%20HISTORY%20.png)
+- User Login
+![login](https://github.com/Utpal7561/Electricity-Bill-Payment-System/blob/main/Screenshot/MECL%20USER%20LOGIN.png)
